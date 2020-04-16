@@ -17,13 +17,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test', 'TestController@testAction');
-
-//to make a table of posts :-
-
-/**
- * 1- define a new route for the user in order to hit the url in browser
- * 2- define a new controller
- * 3- define a new view
- * 4- define $posts array and pass it to the view
- */
+Route::get('/posts', 'PostController@index');
