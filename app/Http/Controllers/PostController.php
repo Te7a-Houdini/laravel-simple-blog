@@ -13,4 +13,12 @@ class PostController extends Controller
        
         return view('index', ['posts' => $postsFromDB]);
     }
+
+    public function show($post)
+    {
+        $singlePost = Post::findOrFail($post);
+        // $singlePost = Post::where('id', $post)->first();
+
+        return view('show', ['post' => $singlePost]);
+    }
 }
