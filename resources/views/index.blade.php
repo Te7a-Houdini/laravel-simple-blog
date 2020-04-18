@@ -35,7 +35,8 @@
                     <td>{{$post->posted_by}}</td>
                     <td>{{$post->created_at->format('Y-m-d')}}</td>
                     <td>
-                        <a class="btn btn-info">View</a>
+                        {{-- <a href="/posts/{{$post->id}}" class="btn btn-info">View</a> --}}
+                    <a href="{{route('posts.show', ['post' => $post->id] )}}" class="btn btn-info">View</a>
                         <a class="btn btn-primary">Edit</a>
                         <a class="btn btn-danger">Delete</a>
                     </td>
