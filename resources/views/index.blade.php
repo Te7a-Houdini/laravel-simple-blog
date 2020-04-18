@@ -33,7 +33,7 @@
                 <td>{{$post->title}}</td>
                 {{-- <td>{{$post['title']}}</td> --}}
                     <td>{{$post->posted_by}}</td>
-                    <td>{{$post->created_at}}</td>
+                    <td>{{$post->created_at->format('Y-m-d')}}</td>
                     <td>
                         <a class="btn btn-info">View</a>
                         <a class="btn btn-primary">Edit</a>
