@@ -26,4 +26,25 @@ class PostController extends Controller
     {
         return view('posts.create');
     }
+
+    public function store()
+    {
+        // $data = request()->all();
+        $title = request()->title;
+        $description = request()->description;
+
+        Post::create([
+            'title' => $title,
+            'description' => $description
+        ]);
+
+        // $post = new Post;
+
+        // $post->title = $title;
+        // $post->description = $description;
+
+        // $post->save();
+       
+        return redirect()->route('posts.index');
+    }
 }

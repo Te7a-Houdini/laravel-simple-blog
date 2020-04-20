@@ -1,14 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-<form>
+<form method="POST" action="{{route('posts.store')}}">
+    @csrf
     <div class="form-group">
         <label>Title</label>
-        <input type="text" class="form-control">
+        <input name="title"  type="text" class="form-control">
     </div>
     <div class="form-group">
         <label >Description</label>
-        <textarea class="form-control"></textarea>
+        <textarea name="description" class="form-control"></textarea>
     </div>
 
     <button type="submit" class="btn btn-success">Create Post</button>
