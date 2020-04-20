@@ -49,4 +49,11 @@ class PostController extends Controller
        
         return redirect()->route('posts.index');
     }
+
+    public function edit($post)
+    {
+        $singlePost = Post::findOrFail($post);
+       
+        return view('posts.edit', ['post' => $singlePost]);
+    }
 }
