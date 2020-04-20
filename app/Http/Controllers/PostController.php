@@ -27,11 +27,13 @@ class PostController extends Controller
         return view('posts.create');
     }
 
-    public function store()
+    public function store(Request $request)
     {
         // $data = request()->all();
-        $title = request()->title;
-        $description = request()->description;
+        // $title = request()->title;
+        // $description = request()->description;
+        $title = $request->title;
+        $description = $request->description;
 
         Post::create([
             'title' => $title,
