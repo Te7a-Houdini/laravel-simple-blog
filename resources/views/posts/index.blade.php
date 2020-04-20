@@ -25,7 +25,11 @@
         {{-- <a href="/posts/{{$post->id}}" class="btn btn-info">View</a> --}}
         <a href="{{route('posts.show', ['post' => $post->id] )}}" class="btn btn-info">View</a>
       <a href="{{route('posts.edit', ['post' => $post->id])}}" class="btn btn-primary">Edit</a>
-        <a class="btn btn-danger">Delete</a>
+      <form style="display:inline;" method="POST"  action="{{route('posts.destroy', ['post' => $post->id])}}">
+        @csrf
+        @method('DELETE')
+        <button class="btn btn-danger" type="submit">Delete</button>
+      </form>
       </td>
     </tr>
     @endforeach
