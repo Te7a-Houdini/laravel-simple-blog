@@ -14,12 +14,11 @@ class PostController extends Controller
         return view('posts.index', ['posts' => $postsFromDB]);
     }
 
-    public function show($post)
+    public function show(Post $post)
     {
-        $singlePost = Post::findOrFail($post);
         // $singlePost = Post::where('id', $post)->first();
 
-        return view('posts.show', ['post' => $singlePost]);
+        return view('posts.show', ['post' => $post]);
     }
 
     public function create()
@@ -50,11 +49,9 @@ class PostController extends Controller
         return redirect()->route('posts.index');
     }
 
-    public function edit($post)
+    public function edit(Post $post)
     {
-        $singlePost = Post::findOrFail($post);
-       
-        return view('posts.edit', ['post' => $singlePost]);
+        return view('posts.edit', ['post' => $post]);
     }
 
     public function update(Request $request, $post)
