@@ -56,4 +56,16 @@ class PostController extends Controller
        
         return view('posts.edit', ['post' => $singlePost]);
     }
+
+    public function update(Request $request, $post)
+    {
+        $singlePost = Post::findOrFail($post);
+  
+        $singlePost->update([
+            'title' => $request->title,
+            'description' => $request->description,
+        ]);
+
+        return redirect()->route('posts.index');
+    }
 }
