@@ -19,7 +19,9 @@
       <th scope="row">{{$post->id}}</th>
       <td>{{$post->title}}</td>
       {{-- <td>{{$post['title']}}</td> --}}
-      <td>{{$post->posted_by}}</td>
+      {{-- @dd($post->user, $post->user()) --}}
+
+      <td>{{$post->user ? $post->user->name : 'user not found'}}</td>
       <td>{{$post->created_at->format('Y-m-d')}}</td>
       <td>
         {{-- <a href="/posts/{{$post->id}}" class="btn btn-info">View</a> --}}
